@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="dashboard.html">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body background="wal.png">  
+    <div class="page">
+        <h1 id="hello">LOGIN UNIMAR</h1>
+        <p id="texto" hidden>Carregando</p>
+        <div id="login">
+                <input type="botao-email" type ="text" placeholder="EMAIL"><br><br>
+                <p hidden id="txtEmail">Informe seu email</p>
+                <input type="password" placeholder="SENHA"><br><br>
+                <p id="txtSenha" hidden>informe sua senha</p>
+        <button id="button" onclick="hide()">
+            Entrar
+        </button>
+        <button id="cancelar" onclick="cancelar()" hidden>
+            Cancelar
+        </button>
+    </div>
+    <script> 
+        function show() {
+            document.getElementById("entrar").innerHTML = 'Teste inserindo texto.';
+        }
+
+        function hide() {
+            var email = document.querySelector('input[type="botao-email"]').value;
+            var senha = document.querySelector('input[type="password"]').value;
+
+            if(email && senha) {
+                document.getElementById("login").hidden = true;
+                document.getElementById("texto").hidden = false;
+                document.getElementById("button").hidden = true;
+                document.getElementById("cancelar").hidden = false;
+                window.location.href = "dashboard.html";
+            } else {
+                document.getElementById("txtEmail").hidden = false;
+                document.getElementById("txtSenha").hidden = false;
+            }
+        }
+
+        function cancelar() {
+            document.getElementById("login").hidden = false;
+            document.getElementById("texto").hidden = true;
+            document.getElementById("button").hidden = false;
+            document.getElementById("cancelar").hidden = true;
+        }
+
+    </script>
+</body>
+</html>
+<!--getElementByid()
+    getElementByTagName()
+    getElementByClassName()
+    querySelector()
+    querySelectAll()
+-->
